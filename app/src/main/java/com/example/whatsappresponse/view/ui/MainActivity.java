@@ -20,6 +20,7 @@ import com.example.whatsappresponse.R;
 import com.example.whatsappresponse.service.model.MessageResponse;
 import com.example.whatsappresponse.service.utils.InterfaceRepositories;
 import com.example.whatsappresponse.view.adapter.MessageAdapter;
+import com.example.whatsappresponse.view.adapter.UtilItemDecorators;
 import com.example.whatsappresponse.viewModel.MainActivityViewModel;
 
 import java.util.ArrayList;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements InterfaceReposito
 
         recyclerView = findViewById(R.id.mainRecycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
+        recyclerView.addItemDecoration(UtilItemDecorators.getSpaceDecorator(this,R.drawable.shape_drawable));
         final MessageAdapter messageAdapter = new MessageAdapter(this, new ArrayList<MessageResponse>());
         recyclerView.setAdapter(messageAdapter);
 

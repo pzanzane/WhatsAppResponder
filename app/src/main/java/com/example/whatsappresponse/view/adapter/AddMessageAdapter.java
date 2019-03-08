@@ -142,8 +142,6 @@ public class AddMessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 break;
         }
 
-
-
     }
 
     public void addReceivedItem(){
@@ -216,7 +214,6 @@ public class AddMessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
                 if(isFocused){
                     int position = Integer.parseInt(String.valueOf(view.getTag()));
-                    Log.d("WASTE","Focused: "+position);
 
                     myTextWatcher.setPosition(position);
                     editText.addTextChangedListener(myTextWatcher);
@@ -248,7 +245,6 @@ public class AddMessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         @Override
         public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
-            Log.d("WASTE","Position: "+position+ " Text: "+charSequence.toString());
             callBack.callback(position, charSequence.toString());
         }
 

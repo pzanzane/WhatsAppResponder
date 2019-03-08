@@ -31,8 +31,6 @@ implements InterfaceRepositories.CallBackToGetMessagList {
         actions = notification.actions;
         Bundle extras = sbn.getNotification().extras;
 
-        String packageName = sbn.getPackageName();
-        String title = extras.getString("android.title");
         messageKey = extras.getCharSequence("android.text").toString().toLowerCase();
 
          if(actions==null){
@@ -44,7 +42,7 @@ implements InterfaceRepositories.CallBackToGetMessagList {
         }
 
 
-        //print(actions, packageName, messageKey);
+        print(actions, sbn.getPackageName(), messageKey);
         new DatabaseRepository(getApplication()).getMessagesForKey(messageKey, this);
 
 
